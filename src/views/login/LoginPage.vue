@@ -134,6 +134,7 @@ watch(isRegister, () => {
             placeholder="请输入密码"
           ></el-input>
         </el-form-item>
+
         <el-form-item prop="repassword">
           <el-input
             :prefix-icon="Lock"
