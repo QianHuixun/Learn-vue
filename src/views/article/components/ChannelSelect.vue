@@ -6,6 +6,10 @@ defineProps({
   modelValue: {
     type: [Number, String],
   },
+  width: {
+    type: String,
+    default: '280px',
+  },
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -23,16 +27,14 @@ getChannelList()
   <el-select
     style="width: 280px"
     :modelValue="modelValue"
-    @update:modelValue="emit('onUpdate:modelValue', $event)"
+    @update:modelValue="emit('update:modelValue', $event)"
+    :style="{ width }"
   >
     <el-option
       v-for="channel in channelList"
       :key="channel.id"
       :label="channel.cate_name"
       :value="channel.id"
-      label="新闻"
-      value="110"
     ></el-option>
-    <el-option label="体育" value="137"></el-option>
   </el-select>
 </template>
